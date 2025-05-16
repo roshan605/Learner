@@ -1,6 +1,6 @@
 ﻿namespace Learner
 {
-    partial class frmParent
+    partial class FormParent
     {
         /// <summary>
         ///  Required designer variable.
@@ -41,28 +41,28 @@
             // 
             // txtFirst
             // 
-            txtFirst.Location = new Point(296, 51);
+            txtFirst.Location = new Point(247, 47);
             txtFirst.Name = "txtFirst";
             txtFirst.Size = new Size(292, 27);
             txtFirst.TabIndex = 0;
             // 
             // txtSecond
             // 
-            txtSecond.Location = new Point(296, 98);
+            txtSecond.Location = new Point(247, 87);
             txtSecond.Name = "txtSecond";
             txtSecond.Size = new Size(292, 27);
             txtSecond.TabIndex = 1;
             // 
             // txtThird
             // 
-            txtThird.Location = new Point(296, 140);
+            txtThird.Location = new Point(247, 132);
             txtThird.Name = "txtThird";
             txtThird.Size = new Size(292, 27);
             txtThird.TabIndex = 2;
             // 
             // txtFourth
             // 
-            txtFourth.Location = new Point(296, 199);
+            txtFourth.Location = new Point(247, 191);
             txtFourth.Name = "txtFourth";
             txtFourth.Size = new Size(292, 27);
             txtFourth.TabIndex = 3;
@@ -70,16 +70,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(179, 58);
+            label1.Location = new Point(171, 50);
             label1.Name = "label1";
             label1.Size = new Size(55, 20);
             label1.TabIndex = 4;
             label1.Text = "input 1";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(179, 98);
+            label2.Location = new Point(171, 90);
             label2.Name = "label2";
             label2.Size = new Size(55, 20);
             label2.TabIndex = 5;
@@ -88,7 +89,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(179, 147);
+            label3.Location = new Point(171, 135);
             label3.Name = "label3";
             label3.Size = new Size(55, 20);
             label3.TabIndex = 6;
@@ -97,15 +98,15 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(179, 206);
+            label4.Location = new Point(171, 194);
             label4.Name = "label4";
-            label4.Size = new Size(55, 20);
+            label4.Size = new Size(57, 20);
             label4.TabIndex = 7;
-            label4.Text = "answer";
+            label4.Text = "Answer";
             // 
             // btnAnswer
             // 
-            btnAnswer.Location = new Point(458, 248);
+            btnAnswer.Location = new Point(409, 240);
             btnAnswer.Name = "btnAnswer";
             btnAnswer.Size = new Size(129, 53);
             btnAnswer.TabIndex = 8;
@@ -113,11 +114,11 @@
             btnAnswer.UseVisualStyleBackColor = true;
             btnAnswer.Click += btnAnswer_Click;
             // 
-            // frmParent
+            // FormParent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(631, 450);
+            ClientSize = new Size(650, 450);
             Controls.Add(btnAnswer);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -127,7 +128,7 @@
             Controls.Add(txtThird);
             Controls.Add(txtSecond);
             Controls.Add(txtFirst);
-            Name = "frmParent";
+            Name = "FormParent";
             Text = "Input";
             Load += Form1_Load;
             ResumeLayout(false);

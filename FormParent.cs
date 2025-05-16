@@ -1,8 +1,8 @@
 namespace Learner
 {
-    public partial class frmParent : Form
+    public partial class FormParent : Form
     {
-        public frmParent()
+        public FormParent()
         {
             InitializeComponent();
         }
@@ -17,6 +17,7 @@ namespace Learner
             int a = Convert.ToInt32(txtFirst.Text);
             int b = Convert.ToInt32(txtSecond.Text);
             int c = Convert.ToInt32(txtThird.Text);
+
             string largestNumber = "";
 
             if (a > b && a > c)
@@ -34,6 +35,11 @@ namespace Learner
                 largestNumber = c.ToString();
                 txtFourth.Text = largestNumber;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
