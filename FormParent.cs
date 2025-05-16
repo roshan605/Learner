@@ -14,26 +14,53 @@ namespace Learner
 
         private void btnAnswer_Click(object sender, EventArgs e)
         {
-            int a = Convert.ToInt32(txtFirst.Text);
-            int b = Convert.ToInt32(txtSecond.Text);
-            int c = Convert.ToInt32(txtThird.Text);
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtFirst.Text) ||
+                    string.IsNullOrWhiteSpace(txtSecond.Text) ||
+                    string.IsNullOrWhiteSpace(txtThird.Text))
+                {
+                    MessageBox.Show("Please enter values in all input fields.", "Validation Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            string largestNumber = "";
+                if (!int.TryParse(txtFirst.Text, out int a) ||
+                    !int.TryParse(txtSecond.Text, out int b) ||
+                    !int.TryParse(txtThird.Text, out int c))
+                {
+                    MessageBox.Show("Please enter valid integer values.", "Validation Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            if (a > b && a > c)
-            {
-                largestNumber = a.ToString();
-                txtFourth.Text = largestNumber;
+                string largestNumber = "";
+
+                if (a > b && a > c)
+                {
+                    largestNumber = a.ToString();
+                    txtFourth.Text = largestNumber;
+                }
+                else if (b > a && b > c)
+                {
+                    largestNumber = b.ToString();
+                    txtFourth.Text = largestNumber;
+                }
+                else if (c > a && c > b)
+                {
+                    largestNumber = c.ToString();
+                    txtFourth.Text = largestNumber;
+                }
+                else
+                {
+                    // Handle case when numbers are equal
+                    txtFourth.Text = a.ToString() + " (multiple equal values)";
+                }
             }
-            else if (b > a && b > c)
+            catch (Exception ex)
             {
-                largestNumber = b.ToString();
-                txtFourth.Text = largestNumber;
-            }
-            else if (c > a && c > b)
-            {
-                largestNumber = c.ToString();
-                txtFourth.Text = largestNumber;
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
